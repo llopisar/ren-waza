@@ -1,0 +1,209 @@
+---
+// src/components/BookingForm.astro
+---
+
+<section
+    id="reserva"
+    class="w-full bg-waza-black py-28 px-6 md:px-12 border-t border-waza-nori/60"
+>
+    <div class="max-w-xl mx-auto">
+        <!-- Encabezado del Formulario -->
+        <div class="text-center mb-16 space-y-3">
+            <h2
+                class="font-serif-display text-3xl uppercase tracking-wider text-waza-white"
+            >
+                Reservas Privadas
+            </h2>
+            <p
+                class="font-sans text-[10px] text-waza-red tracking-[0.25em] uppercase font-bold"
+            >
+                Temporada Julho 2026 <span class="text-waza-white/30 mx-1"
+                    >//</span
+                > Porto
+            </p>
+        </div>
+
+        <!-- Formulario Premium Industrial -->
+        <form class="space-y-10 font-sans">
+            <!-- Nombre (Línea única) -->
+            <div class="relative z-0 w-full group">
+                <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    required
+                    class="block py-3 px-0 w-full text-sm text-waza-white bg-transparent border-0 border-b border-waza-mineral/30 appearance-none focus:outline-none focus:ring-0 focus:border-waza-red transition-colors duration-300 peer"
+                    placeholder=" "
+                />
+                <label
+                    for="name"
+                    class="peer-focus:font-medium absolute text-[10px] uppercase tracking-widest text-waza-mineral duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-waza-red font-bold"
+                >
+                    Nome Completo
+                </label>
+            </div>
+
+            <!-- Contacto (Línea única) -->
+            <div class="relative z-0 w-full group">
+                <input
+                    type="text"
+                    name="contact"
+                    id="contact"
+                    required
+                    class="block py-3 px-0 w-full text-sm text-waza-white bg-transparent border-0 border-b border-waza-mineral/30 appearance-none focus:outline-none focus:ring-0 focus:border-waza-red transition-colors duration-300 peer"
+                    placeholder=" "
+                />
+                <label
+                    for="contact"
+                    class="peer-focus:font-medium absolute text-[10px] uppercase tracking-widest text-waza-mineral duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-waza-red font-bold"
+                >
+                    Contacto (WhatsApp ou Email)
+                </label>
+            </div>
+
+            <!-- Grid: Comensales Custom + Fecha -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 pt-2">
+                <!-- Selectores de Comensales Custom (Sin dropdown genérico) -->
+                <div class="space-y-3">
+                    <span
+                        class="block text-[10px] uppercase tracking-widest text-waza-mineral font-bold"
+                    >
+                        Comensais
+                    </span>
+                    <div class="grid grid-cols-4 gap-2">
+                        <label class="cursor-pointer text-center">
+                            <input
+                                type="radio"
+                                name="guests"
+                                value="2"
+                                checked
+                                class="sr-only peer"
+                            />
+                            <div
+                                class="border border-waza-mineral/20 bg-waza-nori/30 rounded-sm py-2 text-xs text-waza-mineral font-mono transition-all duration-300 peer-checked:border-waza-red peer-checked:text-waza-white peer-checked:bg-waza-red/10 hover:border-waza-mineral/60"
+                            >
+                                2 PAX
+                            </div>
+                        </label>
+
+                        <label class="cursor-pointer text-center">
+                            <input
+                                type="radio"
+                                name="guests"
+                                value="4"
+                                class="sr-only peer"
+                            />
+                            <div
+                                class="border border-waza-mineral/20 bg-waza-nori/30 rounded-sm py-2 text-xs text-waza-mineral font-mono transition-all duration-300 peer-checked:border-waza-red peer-checked:text-waza-white peer-checked:bg-waza-red/10 hover:border-waza-mineral/60"
+                            >
+                                4 PAX
+                            </div>
+                        </label>
+
+                        <label class="cursor-pointer text-center">
+                            <input
+                                type="radio"
+                                name="guests"
+                                value="6"
+                                class="sr-only peer"
+                            />
+                            <div
+                                class="border border-waza-mineral/20 bg-waza-nori/30 rounded-sm py-2 text-xs text-waza-mineral font-mono transition-all duration-300 peer-checked:border-waza-red peer-checked:text-waza-white peer-checked:bg-waza-red/10 hover:border-waza-mineral/60"
+                            >
+                                6 PAX
+                            </div>
+                        </label>
+
+                        <label class="cursor-pointer text-center">
+                            <input
+                                type="radio"
+                                name="guests"
+                                value="private"
+                                class="sr-only peer"
+                            />
+                            <div
+                                class="border border-waza-mineral/20 bg-waza-nori/30 rounded-sm py-2 text-[9px] tracking-tighter text-waza-mineral font-mono flex items-center justify-center h-full transition-all duration-300 peer-checked:border-waza-red peer-checked:text-waza-white peer-checked:bg-waza-red/10 hover:border-waza-mineral/60"
+                            >
+                                +6
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Fecha (Línea única adaptada) -->
+                <div
+                    class="relative z-0 w-full group flex flex-col justify-end"
+                >
+                    <input
+                        type="date"
+                        name="date"
+                        id="date"
+                        required
+                        class="block py-2 px-0 w-full text-sm text-waza-white bg-transparent border-0 border-b border-waza-mineral/30 appearance-none focus:outline-none focus:ring-0 focus:border-waza-red transition-colors duration-300 text-left uppercase font-mono"
+                    />
+                    <label
+                        for="date"
+                        class="absolute text-[10px] uppercase tracking-widest text-waza-mineral top-0 origin-[0] font-bold"
+                    >
+                        Data Pretendida
+                    </label>
+                </div>
+            </div>
+
+            <!-- Restricciones (Línea única) -->
+            <div class="relative z-0 w-full group pt-2">
+                <textarea
+                    name="notes"
+                    id="notes"
+                    rows="2"
+                    class="block py-3 px-0 w-full text-sm text-waza-white bg-transparent border-0 border-b border-waza-mineral/30 appearance-none focus:outline-none focus:ring-0 focus:border-waza-red transition-colors duration-300 resize-none peer"
+                    placeholder=" "></textarea>
+                <label
+                    for="notes"
+                    class="peer-focus:font-medium absolute text-[10px] uppercase tracking-widest text-waza-mineral duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-waza-red font-bold"
+                >
+                    Restrições Alimentares ou Notas
+                </label>
+            </div>
+
+            <!-- Botón de Envío Pesado -->
+            <div class="pt-6">
+                <button
+                    type="submit"
+                    class="w-full bg-transparent border border-waza-red text-waza-white hover:bg-waza-red text-xs font-sans font-bold tracking-[0.25em] uppercase py-4 transition-all duration-300 rounded-sm cursor-pointer"
+                >
+                    Enviar Solicitação de Reserva
+                </button>
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- ⛩️ Footer Minimalista Industrial integrado -->
+<footer
+    class="w-full bg-waza-black pb-12 pt-6 px-6 md:px-12 border-t border-waza-nori/30 font-sans"
+>
+    <div
+        class="max-w-xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] tracking-widest uppercase text-waza-mineral font-medium"
+    >
+        <div class="flex items-center gap-6">
+            <a
+                href="https://instagram.com/renwaza"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-waza-red transition-colors duration-300 flex items-center gap-1.5"
+            >
+                <span>IG //</span>
+                <span class="text-waza-white/60 hover:text-waza-red"
+                    >@renwaza</span
+                >
+            </a>
+        </div>
+
+        <div class="text-center sm:text-right space-y-1 sm:space-y-0">
+            <span>© 2026 REN WAZA.</span>
+            <span class="hidden sm:inline mx-2 text-waza-red/40">|</span>
+            <span>Porto, Portugal</span>
+        </div>
+    </div>
+</footer>

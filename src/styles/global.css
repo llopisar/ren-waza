@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+@theme {
+    /* Tus colores oficiales */
+    --color-waza-black: #000000;
+    --color-waza-nori: #1A1A1A;
+    --color-waza-mineral: #5A5A5A;
+    --color-waza-white: #EAEAEA;
+    --color-waza-red: #B61023;
+    /* Tu rojo carmesí de la bandera de Japón 🎌 */
+
+    /* Tus fuentes */
+    --font-serif-display: "Noto Serif Display", serif;
+    --font-mon-cheri: "TAN Mon Cheri", serif;
+
+    /* Tu interletrado abierto para "WAZA" */
+    --tracking-waza-wide: 0.25em;
+}
+
+html {
+    scroll-behavior: smooth;
+}
