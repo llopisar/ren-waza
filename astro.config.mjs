@@ -1,11 +1,14 @@
-// @ts-check
 import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
+import sitemap from '@astrojs/sitemap';
 
-import tailwindcss from '@tailwindcss/vite';
-
-// https://astro.build/config
 export default defineConfig({
-  vite: {
-    plugins: [tailwindcss()]
-  }
+  // 1. Clavamos tu dominio oficial para que los bots sepan dónde buscar
+  site: 'https://www.renwaza.com',
+
+  integrations: [
+    tailwind(),
+    // 2. Prendemos el generador automático de sitemaps
+    sitemap()
+  ],
 });
