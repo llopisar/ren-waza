@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-import tailwind from '@tailwindcss/vite'; // 🔌 Traemos de vuelta el motor de la v4
+import tailwind from '@tailwindcss/vite'; // 🔌 Motor nativo v4
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,10 +9,8 @@ export default defineConfig({
   vite: {
     plugins: [
       tailwind({
-        // 🛡️ Esto evita el error de tsconfigPaths que rompía el build en Netlify
-        experimental: {
-          configFile: false
-        }
+        // 🎯 EL PARCHE DE NETLIFY: Esto desactiva el campo que hacía fallar a Vite/Rolldown
+        resolveOptions: { tsconfigPaths: false }
       })
     ],
   },
