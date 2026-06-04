@@ -27,7 +27,6 @@
             method="POST"
             data-netlify="true"
             class="space-y-10 font-sans"
-            class="space-y-10 font-sans"
         >
             <!-- Nombre (Línea única) -->
             <div class="relative z-0 w-full group">
@@ -67,14 +66,15 @@
 
             <!-- Grid: Comensales Custom + Fecha -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 pt-2">
-                <!-- Selectores de Comensales Custom (Sin dropdown genérico) -->
+                <!-- Selectores de Comensales de 2 a 6 PAX -->
                 <div class="space-y-3">
                     <span
                         class="block text-[10px] uppercase tracking-widest text-waza-mineral font-bold"
                     >
                         Comensais
                     </span>
-                    <div class="grid grid-cols-4 gap-2">
+                    <div class="grid grid-cols-3 md:grid-cols-5 gap-2">
+                        <!-- 2 PAX -->
                         <label class="cursor-pointer text-center">
                             <input
                                 type="radio"
@@ -90,6 +90,22 @@
                             </div>
                         </label>
 
+                        <!-- 3 PAX -->
+                        <label class="cursor-pointer text-center">
+                            <input
+                                type="radio"
+                                name="guests"
+                                value="3"
+                                class="sr-only peer"
+                            />
+                            <div
+                                class="border border-waza-mineral/20 bg-waza-nori/30 rounded-sm py-2 text-xs text-waza-mineral font-mono transition-all duration-300 peer-checked:border-waza-red peer-checked:text-waza-white peer-checked:bg-waza-red/10 hover:border-waza-mineral/60"
+                            >
+                                3 PAX
+                            </div>
+                        </label>
+
+                        <!-- 4 PAX -->
                         <label class="cursor-pointer text-center">
                             <input
                                 type="radio"
@@ -104,7 +120,25 @@
                             </div>
                         </label>
 
+                        <!-- 5 PAX -->
                         <label class="cursor-pointer text-center">
+                            <input
+                                type="radio"
+                                name="guests"
+                                value="5"
+                                class="sr-only peer"
+                            />
+                            <div
+                                class="border border-waza-mineral/20 bg-waza-nori/30 rounded-sm py-2 text-xs text-waza-mineral font-mono transition-all duration-300 peer-checked:border-waza-red peer-checked:text-waza-white peer-checked:bg-waza-red/10 hover:border-waza-mineral/60"
+                            >
+                                5 PAX
+                            </div>
+                        </label>
+
+                        <!-- 6 PAX -->
+                        <label
+                            class="cursor-pointer text-center col-span-3 sm:col-span-1 md:col-span-1"
+                        >
                             <input
                                 type="radio"
                                 name="guests"
@@ -115,20 +149,6 @@
                                 class="border border-waza-mineral/20 bg-waza-nori/30 rounded-sm py-2 text-xs text-waza-mineral font-mono transition-all duration-300 peer-checked:border-waza-red peer-checked:text-waza-white peer-checked:bg-waza-red/10 hover:border-waza-mineral/60"
                             >
                                 6 PAX
-                            </div>
-                        </label>
-
-                        <label class="cursor-pointer text-center">
-                            <input
-                                type="radio"
-                                name="guests"
-                                value="private"
-                                class="sr-only peer"
-                            />
-                            <div
-                                class="border border-waza-mineral/20 bg-waza-nori/30 rounded-sm py-2 text-[9px] tracking-tighter text-waza-mineral font-mono flex items-center justify-center h-full transition-all duration-300 peer-checked:border-waza-red peer-checked:text-waza-white peer-checked:bg-waza-red/10 hover:border-waza-mineral/60"
-                            >
-                                +6
                             </div>
                         </label>
                     </div>
@@ -183,31 +203,32 @@
     </div>
 </section>
 
-<!-- ⛩️ Footer Minimalista Industrial integrado -->
-<footer
-    class="w-full bg-waza-black pb-12 pt-6 px-6 md:px-12 border-t border-waza-nori/30 font-sans"
->
-    <div
-        class="max-w-xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] tracking-widest uppercase text-waza-mineral font-medium"
-    >
-        <div class="flex items-center gap-6">
-            <a
-                href="https://instagram.com/renwaza"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="hover:text-waza-red transition-colors duration-300 flex items-center gap-1.5"
-            >
-                <span>IG //</span>
-                <span class="text-waza-white/60 hover:text-waza-red"
-                    >@renwaza</span
+<!-- Footer Minimalista REN Waza -->
+<footer class="ren-footer">
+    <div class="footer-content">
+        <div class="footer-brand">
+            <span class="brand-main">REN</span>
+            <span class="brand-sub">WAZA</span>
+        </div>
+        <div class="footer-info">
+            <p class="footer-artisan">Handmade Sushi</p>
+            <p class="footer-location">Porto, PT</p>
+        </div>
+        <div class="footer-contact">
+            <div class="contact-group">
+                <a href="mailto:augusto@renwaza.com" class="footer-link"
+                    >augusto@renwaza.com</a
                 >
-            </a>
+                <a
+                    href="https://www.instagram.com/renwaza"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="footer-link instagram-link">@renwaza</a
+                >
+            </div>
         </div>
-
-        <div class="text-center sm:text-right space-y-1 sm:space-y-0">
-            <span>© 2026 REN WAZA.</span>
-            <span class="hidden sm:inline mx-2 text-waza-red/40">|</span>
-            <span>Porto, Portugal</span>
-        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2026 REN Waza. All rights reserved.</p>
     </div>
 </footer>

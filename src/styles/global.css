@@ -20,3 +20,97 @@
 html {
     scroll-behavior: smooth;
 }
+
+/* Estilos Industriales / Blackwork para el Footer */
+.ren-footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 40px 20px 20px 20px;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: 0.15em;
+    border-top: 1px solid #222222;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+}
+
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+}
+
+.footer-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.brand-sub {
+    font-weight: 300;
+    color: #888888;
+    margin-left: 4px;
+}
+
+.footer-info p {
+    margin: 4px 0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #aaaaaa;
+}
+
+.footer-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #888888;
+    border-color: #888888;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid #111111;
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 0.7rem;
+    color: #444444;
+    text-transform: uppercase;
+}
+
+.footer-contact .contact-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* Espacio limpio entre el mail y el instagram */
+}
+
+@media (min-width: 768px) {
+    .footer-contact .contact-group {
+        align-items: flex-end;
+        /* Alinea ambos links a la derecha en pantallas grandes */
+        text-align: right;
+    }
+}
+
+/* Estilo sutil extra por si querés que resalte un poco el arroba */
+.instagram-link {
+    font-weight: 300;
+    color: #cccccc;
+}
