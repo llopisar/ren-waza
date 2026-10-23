@@ -1,3 +1,4 @@
+
 ---
 // src/components/BookingForm.astro
 ---
@@ -7,28 +8,38 @@
     class="w-full bg-waza-black py-28 px-6 md:px-12 border-t border-waza-nori/60"
 >
     <div class="max-w-xl mx-auto">
-        <!-- Encabezado del Formulario -->
+
+        <!-- Encabezado -->
         <div class="text-center mb-16 space-y-3">
             <h2
                 class="font-serif-display text-3xl uppercase tracking-wider text-waza-white"
             >
                 Reservas
             </h2>
+
             <p
                 class="font-sans text-[10px] text-waza-red tracking-[0.25em] uppercase font-bold"
             >
-                Temporada 2026 <span class="text-waza-white/30 mx-1">//</span> Porto
+                Private Sushi Experience
+                <span class="text-waza-white/30 mx-1">//</span>
+                Porto
             </p>
         </div>
 
-        <!-- Formulario Premium Industrial -->
+        <!-- Formulario -->
         <form
             name="reservas-waza"
             method="POST"
             data-netlify="true"
             class="space-y-10 font-sans"
         >
-            <!-- Nombre (Línea única) -->
+            <input
+                type="hidden"
+                name="form-name"
+                value="reservas-waza"
+            />
+
+            <!-- Nombre -->
             <div class="relative z-0 w-full group">
                 <input
                     type="text"
@@ -38,6 +49,7 @@
                     class="block py-3 px-0 w-full text-sm text-waza-white bg-transparent border-0 border-b border-waza-mineral/30 appearance-none focus:outline-none focus:ring-0 focus:border-waza-red transition-colors duration-300 peer"
                     placeholder=" "
                 />
+
                 <label
                     for="name"
                     class="peer-focus:font-medium absolute text-[10px] uppercase tracking-widest text-waza-mineral duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-waza-red font-bold"
@@ -46,7 +58,7 @@
                 </label>
             </div>
 
-            <!-- Contacto (Línea única) -->
+            <!-- Contacto -->
             <div class="relative z-0 w-full group">
                 <input
                     type="text"
@@ -56,6 +68,7 @@
                     class="block py-3 px-0 w-full text-sm text-waza-white bg-transparent border-0 border-b border-waza-mineral/30 appearance-none focus:outline-none focus:ring-0 focus:border-waza-red transition-colors duration-300 peer"
                     placeholder=" "
                 />
+
                 <label
                     for="contact"
                     class="peer-focus:font-medium absolute text-[10px] uppercase tracking-widest text-waza-mineral duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-waza-red font-bold"
@@ -64,97 +77,39 @@
                 </label>
             </div>
 
-            <!-- Grid: Comensales Custom + Fecha -->
+            <!-- Comensales y fecha -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 pt-2">
-                <!-- Selectores de Comensales de 2 a 6 PAX -->
+
+                <!-- Número de comensales -->
                 <div class="space-y-3">
                     <span
                         class="block text-[10px] uppercase tracking-widest text-waza-mineral font-bold"
                     >
                         Comensais
                     </span>
+
                     <div class="grid grid-cols-3 md:grid-cols-5 gap-2">
-                        <!-- 2 PAX -->
-                        <label class="cursor-pointer text-center">
-                            <input
-                                type="radio"
-                                name="guests"
-                                value="2"
-                                checked
-                                class="sr-only peer"
-                            />
-                            <div
-                                class="border border-waza-mineral/20 bg-waza-nori/30 rounded-sm py-2 text-xs text-waza-mineral font-mono transition-all duration-300 peer-checked:border-waza-red peer-checked:text-waza-white peer-checked:bg-waza-red/10 hover:border-waza-mineral/60"
-                            >
-                                2 PAX
-                            </div>
-                        </label>
+                        {
+                            [2, 3, 4, 5, 6].map((guests) => (
+                                <label class="cursor-pointer text-center">
+                                    <input
+                                        type="radio"
+                                        name="guests"
+                                        value={guests}
+                                        checked={guests === 2}
+                                        class="sr-only peer"
+                                    />
 
-                        <!-- 3 PAX -->
-                        <label class="cursor-pointer text-center">
-                            <input
-                                type="radio"
-                                name="guests"
-                                value="3"
-                                class="sr-only peer"
-                            />
-                            <div
-                                class="border border-waza-mineral/20 bg-waza-nori/30 rounded-sm py-2 text-xs text-waza-mineral font-mono transition-all duration-300 peer-checked:border-waza-red peer-checked:text-waza-white peer-checked:bg-waza-red/10 hover:border-waza-mineral/60"
-                            >
-                                3 PAX
-                            </div>
-                        </label>
-
-                        <!-- 4 PAX -->
-                        <label class="cursor-pointer text-center">
-                            <input
-                                type="radio"
-                                name="guests"
-                                value="4"
-                                class="sr-only peer"
-                            />
-                            <div
-                                class="border border-waza-mineral/20 bg-waza-nori/30 rounded-sm py-2 text-xs text-waza-mineral font-mono transition-all duration-300 peer-checked:border-waza-red peer-checked:text-waza-white peer-checked:bg-waza-red/10 hover:border-waza-mineral/60"
-                            >
-                                4 PAX
-                            </div>
-                        </label>
-
-                        <!-- 5 PAX -->
-                        <label class="cursor-pointer text-center">
-                            <input
-                                type="radio"
-                                name="guests"
-                                value="5"
-                                class="sr-only peer"
-                            />
-                            <div
-                                class="border border-waza-mineral/20 bg-waza-nori/30 rounded-sm py-2 text-xs text-waza-mineral font-mono transition-all duration-300 peer-checked:border-waza-red peer-checked:text-waza-white peer-checked:bg-waza-red/10 hover:border-waza-mineral/60"
-                            >
-                                5 PAX
-                            </div>
-                        </label>
-
-                        <!-- 6 PAX -->
-                        <label
-                            class="cursor-pointer text-center col-span-3 sm:col-span-1 md:col-span-1"
-                        >
-                            <input
-                                type="radio"
-                                name="guests"
-                                value="6"
-                                class="sr-only peer"
-                            />
-                            <div
-                                class="border border-waza-mineral/20 bg-waza-nori/30 rounded-sm py-2 text-xs text-waza-mineral font-mono transition-all duration-300 peer-checked:border-waza-red peer-checked:text-waza-white peer-checked:bg-waza-red/10 hover:border-waza-mineral/60"
-                            >
-                                6 PAX
-                            </div>
-                        </label>
+                                    <div class="border border-waza-mineral/20 bg-waza-nori/30 rounded-sm py-2 text-xs text-waza-mineral font-mono transition-all duration-300 peer-checked:border-waza-red peer-checked:text-waza-white peer-checked:bg-waza-red/10 hover:border-waza-mineral/60">
+                                        {guests} PAX
+                                    </div>
+                                </label>
+                            ))
+                        }
                     </div>
                 </div>
 
-                <!-- Fecha (Línea única adaptada) -->
+                <!-- Fecha -->
                 <div
                     class="relative z-0 w-full group flex flex-col justify-end"
                 >
@@ -165,6 +120,7 @@
                         required
                         class="block py-2 px-0 w-full text-sm text-waza-white bg-transparent border-0 border-b border-waza-mineral/30 appearance-none focus:outline-none focus:ring-0 focus:border-waza-red transition-colors duration-300 text-left uppercase font-mono"
                     />
+
                     <label
                         for="date"
                         class="absolute text-[10px] uppercase tracking-widest text-waza-mineral top-0 origin-[0] font-bold"
@@ -174,14 +130,35 @@
                 </div>
             </div>
 
-            <!-- Restricciones (Línea única) -->
+            <!-- Ubicación del servicio -->
+            <div class="relative z-0 w-full group">
+                <input
+                    type="text"
+                    name="location"
+                    id="location"
+                    required
+                    class="block py-3 px-0 w-full text-sm text-waza-white bg-transparent border-0 border-b border-waza-mineral/30 appearance-none focus:outline-none focus:ring-0 focus:border-waza-red transition-colors duration-300 peer"
+                    placeholder=" "
+                />
+
+                <label
+                    for="location"
+                    class="peer-focus:font-medium absolute text-[10px] uppercase tracking-widest text-waza-mineral duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-waza-red font-bold"
+                >
+                    Local do Serviço (Porto e Arredores)
+                </label>
+            </div>
+
+            <!-- Restricciones alimentarias -->
             <div class="relative z-0 w-full group pt-2">
                 <textarea
                     name="notes"
                     id="notes"
                     rows="2"
-                    class="block py-3 px-0 w-full text-sm text-waza-white bg-transparent border-0 border-b border-waza-mineral/30 appearance-none focus:outline-none focus:ring-0 focus:border-waza-red transition-colors duration-300 resize-none peer"
-                    placeholder=" "></textarea>
+                    class="block py-3 px-0 w-full text-sm text-waza-white bg-transparent border-0 border-b border-b border-waza-mineral/30 appearance-none focus:outline-none focus:ring-0 focus:border-waza-red transition-colors duration-300 resize-none peer"
+                    placeholder=" "
+                ></textarea>
+
                 <label
                     for="notes"
                     class="peer-focus:font-medium absolute text-[10px] uppercase tracking-widest text-waza-mineral duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 peer-focus:text-waza-red font-bold"
@@ -190,44 +167,82 @@
                 </label>
             </div>
 
-            <!-- Botón de Envío Pesado -->
-            <div class="pt-6">
+            <!-- Información adicional -->
+            <div class="space-y-4 pt-2">
+
+                <p
+                    class="text-xs text-waza-mineral leading-relaxed text-center"
+                >
+                    Após o pedido de disponibilidade, entraremos em contacto
+                    para confirmar os detalhes da experiência e solicitar
+                    algumas fotografias da cozinha onde será realizado o serviço.
+                </p>
+
+                <div class="text-center space-y-2">
+                    <p
+                        class="text-[10px] uppercase tracking-[0.2em] text-waza-red font-bold"
+                    >
+                        Área de Serviço
+                    </p>
+
+                    <p
+                        class="text-xs text-waza-mineral leading-relaxed"
+                    >
+                        Disponível no Porto e arredores.
+                        Outras localizações sujeitas a consulta.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Botón -->
+            <div class="pt-2">
                 <button
                     type="submit"
                     class="w-full bg-transparent border border-waza-red text-waza-white hover:bg-waza-red text-xs font-sans font-bold tracking-[0.25em] uppercase py-4 transition-all duration-300 rounded-sm cursor-pointer"
                 >
-                    Enviar Solicitação de Reserva
+                    Consultar Disponibilidade
                 </button>
             </div>
+
         </form>
     </div>
 </section>
 
-<!-- Footer Minimalista REN Waza -->
+<!-- Footer REN WAZA -->
 <footer class="ren-footer">
     <div class="footer-content">
+
         <div class="footer-brand">
             <span class="brand-main">REN</span>
             <span class="brand-sub">WAZA</span>
         </div>
+
         <div class="footer-info">
             <p class="footer-artisan">Handmade Sushi</p>
             <p class="footer-location">Porto, PT</p>
         </div>
+
         <div class="footer-contact">
             <div class="contact-group">
-                <a href="mailto:augusto@renwaza.com" class="footer-link"
-                    >augusto@renwaza.com</a
+                <a
+                    href="mailto:augusto@renwaza.com"
+                    class="footer-link"
                 >
+                    augusto@renwaza.com
+                </a>
+
                 <a
                     href="https://www.instagram.com/renwaza"
                     target="_blank"
                     rel="noopener noreferrer"
-                    class="footer-link instagram-link">@renwaza</a
+                    class="footer-link instagram-link"
                 >
+                    @renwaza
+                </a>
             </div>
         </div>
     </div>
+
     <div class="footer-bottom">
         <p>&copy; 2026 REN Waza. All rights reserved.</p>
     </div>
