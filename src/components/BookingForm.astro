@@ -109,26 +109,26 @@
                     </div>
                 </div>
 
-                <!-- Fecha -->
-                <div
-                    class="relative z-0 w-full group flex flex-col justify-end"
-                >
-                    <input
-                        type="date"
-                        name="date"
-                        id="date"
-                        required
-                        class="block py-2 px-0 w-full text-sm text-waza-white bg-transparent border-0 border-b border-waza-mineral/30 appearance-none focus:outline-none focus:ring-0 focus:border-waza-red transition-colors duration-300 text-left uppercase font-mono"
-                    />
 
-                    <label
-                        for="date"
-                        class="absolute text-[10px] uppercase tracking-widest text-waza-mineral top-0 origin-[0] font-bold"
-                    >
-                        Data Pretendida
-                    </label>
-                </div>
-            </div>
+<!-- Fecha -->
+<div class="relative z-0 w-full group flex flex-col justify-end">
+    <input
+        type="date"
+        name="date"
+        id="date"
+        required
+        onclick="if (this.showPicker) this.showPicker()"
+        class="block py-2 px-0 w-full text-sm text-waza-white bg-transparent border-0 border-b border-waza-mineral/30 appearance-none focus:outline-none focus:ring-0 focus:border-waza-red transition-colors duration-300 text-left uppercase font-mono cursor-pointer [color-scheme:dark]"
+    />
+
+    <label
+        for="date"
+        class="absolute text-[10px] uppercase tracking-widest text-waza-mineral top-0 origin-[0] font-bold pointer-events-none"
+    >
+        Data Pretendida
+    </label>
+</div>
+
 
             <!-- Ubicación del servicio -->
             <div class="relative z-0 w-full group">
